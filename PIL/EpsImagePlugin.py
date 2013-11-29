@@ -99,8 +99,8 @@ def Ghostscript(tile, size, fp, scale=1):
             gs.stdin.write(s)
         gs.stdin.close()
         status = gs.wait()
-        if status:
-            raise IOError("gs failed (status %d)" % status)
+        #if status:
+        #    raise IOError("gs failed (status %d)" % status)
         im = Image.core.open_ppm(file)
     finally:
         try: os.unlink(file)
